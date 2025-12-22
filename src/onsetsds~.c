@@ -144,8 +144,8 @@ static void onsetsds_tilde_dsp(t_onsetsds_tilde *x, t_signal **sp) {
 // ─────────────────────────────────────
 static void *onsetsds_tilde_new(t_symbol *s, int argc, t_atom *argv) {
     t_onsetsds_tilde *x = (t_onsetsds_tilde *)pd_new(onsetsds_tilde_class);
-    argc > 0 ? x->fftsize = atom_getfloat(argv) : 512;
-    argc > 1 ? x->medspan = atom_getfloat(argv + 1) : 10;
+    x->fftsize = (argc > 0) ? atom_getfloat(argv) : 512;
+    x->medspan = (argc > 1) ? atom_getfloat(argv + 1) : 20;
     x->accum = 0;
 
     /* Inicializa o OnsetsDS */
