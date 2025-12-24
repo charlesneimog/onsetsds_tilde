@@ -46,7 +46,7 @@ static void onsetsds_tilde_restart(t_onsetsds_tilde *x) {
 
     x->x_window = (t_sample *)getbytes(x->fftsize * sizeof(t_sample));
     for (int i = 0; i < x->fftsize; i++) {
-        x->x_window[i] = 0.5f * (1.0f - cosf(2.0f * M_PI * i / (x->fftsize - 1)));
+        x->x_window[i] = 0.5f * (1.0f - cosf(2.0f * PI * i / (x->fftsize - 1)));
     }
 }
 
@@ -170,7 +170,7 @@ static void *onsetsds_tilde_new(t_symbol *s, int argc, t_atom *argv) {
 
     x->x_window = (t_sample *)getbytes(x->fftsize * sizeof(t_sample));
     for (int i = 0; i < x->fftsize; i++) {
-        x->x_window[i] = 0.5f * (1.0f - cosf(2.0f * M_PI * i / (x->fftsize - 1)));
+        x->x_window[i] = 0.5f * (1.0f - cosf(2.0f * PI * i / (x->fftsize - 1)));
     }
     x->x_out_bang = outlet_new(&x->x_obj, &s_bang);
     x->x_out_odf = outlet_new(&x->x_obj, &s_float);
