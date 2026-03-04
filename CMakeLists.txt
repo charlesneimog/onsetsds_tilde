@@ -19,6 +19,6 @@ pd_add_external(onsetsds~ "${CMAKE_CURRENT_SOURCE_DIR}/src/onsetsds~.c" LINK_LIB
 pd_add_datafile(onsetsds~ "${CMAKE_CURRENT_SOURCE_DIR}/resources/onsetsds~-help.pd")
 set_target_properties(
     onsetsds_tilde
-    PROPERTIES C_STANDARD 23
+    PROPERTIES C_STANDARD 17
                C_STANDARD_REQUIRED YES
                C_EXTENSIONS NO)
